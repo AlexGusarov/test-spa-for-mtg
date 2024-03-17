@@ -1,0 +1,17 @@
+.watch {
+    width: 240px;
+    height: 50px;
+    font-family: 'Digital-7', 'Lucida Console', monospace; 
+    color: #000; 
+    background-color: #fff; 
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em; 
+    letter-spacing: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+  
