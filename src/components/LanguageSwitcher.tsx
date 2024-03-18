@@ -9,7 +9,7 @@ interface State {
   language: string;
 }
 
-class LanguageSwitcher extends React.Component<LanguageSwitcherProps, State> {
+export class LanguageSwitcher extends React.Component<LanguageSwitcherProps, State> {
   constructor(props: LanguageSwitcherProps) {
     super(props);
     this.state = { language: props.defaultLanguage || 'ru' };
@@ -28,8 +28,8 @@ class LanguageSwitcher extends React.Component<LanguageSwitcherProps, State> {
     return (
       <div className="language-switcher">
         <select value={this.state.language} onChange={this.handleLanguageChange}>
-          <option value="en">English</option>
-          <option value="ru">Русский</option>
+          <option value="en">Eng</option>
+          <option value="ru">Ru</option>
         </select>
       </div>
     );
