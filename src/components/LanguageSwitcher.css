@@ -1,0 +1,26 @@
+.language-switcher {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .select-language {
+    border: none;
+    background: transparent;
+    padding: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .select-language:focus {
+    outline: none;
+  }
+  
+  .option-language:hover,
+  .option-language:focus,
+  .option-language:active {
+    background-color: #e7e7e7;
+  }
+  

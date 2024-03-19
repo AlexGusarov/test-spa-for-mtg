@@ -1,31 +1,43 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import reviewsData from '../data/data.json';
+import { RootState } from '../store/store';
 import './ReviewsList.css';
 
 interface Review {
-  name: string;
-  review: string;
-  date: string;
-}
-
-interface State {
-  reviews: Review[];
-  currentPage: number;
-  reviewsPerPage: number;
-}
-
-class ReviewsList extends React.Component<{}, State> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      reviews: [],
-      currentPage: 1,
-      reviewsPerPage: 10
-    };
+    name: string;
+    review: string;
+    date: string;
   }
+  
+  interface State {
+    reviews: Review[];
+    currentPage: number;
+    reviewsPerPage: number;
+  }
+  
+  interface StateProps {
+    language: 'ru' | 'en'; 
+  }
+
+class ReviewsList extends React.Component<StateProps, State> {
+    constructor(props: StateProps) {
+        super(props);
+        this.state = {
+          reviews: [],
+          currentPage: 1,
+          reviewsPerPage: 10
+        };
+      }
 
   componentDidMount() {
     this.loadReviews('ru'); 
+  }
+
+  componentDidUpdate(prevProps: StateProps) {
+    if (this.props.language !== prevProps.language) {
+      this.loadReviews(this.props.language);
+    }
   }
 
   loadReviews = (language: 'ru' | 'en') => {
@@ -89,4 +101,8 @@ class ReviewsList extends React.Component<{}, State> {
   }
 }
 
-export default ReviewsList;
+const mapStateToProps = (state: RootState): StateProps => ({
+    language: state.language,
+  });
+
+  export default connect(mapStateToProps)(ReviewsList);
