@@ -10,7 +10,7 @@ export class Header extends React.Component {
         <Watch />
         <h1 className="header__heading">Отзывы</h1>
         <LanguageSwitcher />
-     </header>
+      </header>
     );
   }
 }

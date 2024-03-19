@@ -5,10 +5,10 @@ interface State {
   currentTime: string;
 }
 
-export class Watch extends React.Component<{}, State> {
+export class Watch extends React.Component<Record<string, never>, State> {
   timerID: NodeJS.Timer | undefined;
 
-  constructor(props: {}) {
+  constructor(props: Record<string, never>) {
     super(props);
     this.state = { currentTime: new Date().toLocaleTimeString() }; 
   }
